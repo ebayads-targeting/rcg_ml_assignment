@@ -60,4 +60,4 @@ can be grouped under USER_ID as all the events will have the COOKIE_ID same as e
 NOTES:
 - User can reset it’s COOKIE_ID any time by clearing Browser cookies
 - Two user can share the computer, hence they can have the same COOKIE_ID
-- Everyday e-commerce site receives millions of events. Hence the log files will be giga bytes in size. 
+- Everyday e-commerce site receives millions of events. Hence the log files will be giga bytes in size. Please design your solution to work with big size files.
