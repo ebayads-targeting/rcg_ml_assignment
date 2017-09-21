@@ -61,3 +61,4 @@ NOTES:
 - User can reset it’s COOKIE_ID any time by clearing Browser cookies
 - Two user can share the computer, hence they can have the same COOKIE_ID
 - Everyday e-commerce site receives millions of events. Hence the log files will be giga bytes in size. Please design your solution to work with big size files.
+- Sample data files data1.gz and data2.gz are provided under https://github.com/ebayads-targeting/rcg_ml_assignment 
