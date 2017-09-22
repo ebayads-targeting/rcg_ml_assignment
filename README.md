@@ -7,10 +7,11 @@ All the user activities on site are logged in a log file. The format of log file
 following columns:
 
     EVENT_TIMESTAMP    COOKIE_ID    USER_ID    EVENT_TYPE    EVENT_DATA
-    1505863678         cookie2      NULL       search        query=apple tv
-    1505863778         cookie2      NULL       search        query=chromecast
-    1505863679         cookie1      NULL       search        query=iphone x
-    1505863733         cookie1      user1      purchase      item=iphoneX,count=1,amount=1200
+    1505863678         cookie2      NULL       SEARCH        query=apple tv
+    1505863778         cookie2      NULL       SEARCH        query=chromecast
+    1505863679         cookie1      NULL       SEARCH        query=iphone x
+    1505863690         cookie1      user1      VIEW          item=iphone x
+    1505863733                      user1      PURCHASE      item=iphoneX,count=1,amount=1200
 
 
 All the actions that the user made without signing in will have only COOKIE_ID in the events logged in the log file.
@@ -23,12 +24,17 @@ by a user to do a purchase. The output will be one JSON record per user. The JSO
 {
    "id": "user1",
    "events" : [ {
-         "event_type": "search",
+         "event_type": "SEARCH",
          "timestamp": 1505863679,
          "eventData": "query=iphone x"
      },
      {
-         "event_type": "purchase",
+         "event_type": "VIEW",
+         "timestamp": 1505863690,
+         "eventData": "item=iphone x"
+     },
+     {
+         "event_type": "PURCHASE",
          "timestamp": 1505863733,
          "eventData": "item=iphoneX,count=1,amount=1200"
      }
@@ -37,12 +43,12 @@ by a user to do a purchase. The output will be one JSON record per user. The JSO
 {
    "id": "cookie2",
    "events" : [ {
-         "event_type": "search",
+         "event_type": "SEARCH",
          "timestamp": 1505863678,
          "eventData": "query=apple tv"
      },
      {
-         "event_type": "purchase",
+         "event_type": "PURCHASE",
          "timestamp": 1505863778,
          "eventData": "query=chromecast"
      }
